@@ -6,6 +6,12 @@ export const HeaderContainer = styled.header`
 
 `;
 
+export const Logo = styled.a`
+`;
+
+export const Button = styled.button`
+`;
+
 export const NavbarContainer = styled.nav`
 
 `;

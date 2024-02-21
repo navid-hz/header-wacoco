@@ -1,7 +1,7 @@
 import React from "react";
-import { NavbarContainer } from "./navbar.styles";
+import { NavbarContainer } from "./header.styles";
 
-const Navbar = () => {
+const NavBar = () => {
     return (
         <NavbarContainer>
         <h1>My React App</h1>
@@ -9,4 +9,4 @@ const Navbar = () => {
     );
     };
 
-export default Navbar;
+export default NavBar;
