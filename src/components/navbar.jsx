@@ -34,7 +34,7 @@ const NavBar = ({items}) => {
                 <NavbarItem key={index}>
                     <NavbarLink href={item.url}>
                     {item.title}
-                    {item.submenu && openSubmenu === index && renderSubmenu(item.submenu, index)}
+                    {item.submenu && renderSubmenu(item.submenu, index)}
                     </NavbarLink>
                 </NavbarItem>
             );
