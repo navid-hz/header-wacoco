@@ -2,12 +2,15 @@ import React from "react";
 import propTypes from "prop-types";
 import NavBar from './navbar';
 import { HeaderContainer, Logo, Button } from "./header.styles";
+import LogoLg from '../assets/Wacoco-Loggo-LG.svg';
 
-const Header = (items) => {
+const Header = ({items}) => {
   return (
-    <HeaderContainer>
-        <Logo href="#" alt='WACOCO Logo'></Logo>
-        <NavBar />
+    <HeaderContainer items={items}>
+        <Logo href="#">
+            <img src={LogoLg} alt='WACOCO Logo' />
+        </Logo>
+        <NavBar items={items} />
         <Button>Contact us </Button>
       
     </HeaderContainer>
@@ -15,13 +18,7 @@ const Header = (items) => {
 };
 
 Header.propTypes = {
-    items: propTypes.arrayOf(
-        propTypes.shape({
-            title: propTypes.string.isRequired,
-            url: propTypes.string.isRequired,
-            submenu: propTypes.array,
-        })
-    ),
+    items: propTypes.array.isRequired,
 };
 
 export default Header;
