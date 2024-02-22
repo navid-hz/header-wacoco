@@ -77,5 +77,18 @@ export const NavbarLink = styled.a`
 `;
 
 export const SubNavbarList = styled.ul`
+    list-style: none;
+    position: absolute;
+    display: none;
+    min-width: 100%;
+    left: 0;
+    right: 0;
+    top: 70px;
+    background-color: #000639;
+    padding: 0 15px 13px 15px;
+    
+    a:hover > &{
+        display: block;
+    }
 `;
 
