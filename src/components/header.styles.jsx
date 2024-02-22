@@ -92,3 +92,13 @@ export const SubNavbarList = styled.ul`
     }
 `;
 
+export const HamburgerMenu = styled.a`
+    display: none;
+    position: relative;
+    cursor: pointer;
+    @media (max-width: 992px) {
+        display: block;
+        float: right;
+    }
+    `;
+
