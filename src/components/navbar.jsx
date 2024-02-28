@@ -1,41 +1,52 @@
 import React, {useState} from "react";
-import { NavbarContainer, NavbarItem, NavbarList, SubNavbarList, NavbarLink } from "./header.styles";
+import { NavbarContainer, NavbarItem, NavbarList, SubNavbarList, NavbarLink, SubNavbarItem, ChevronDown } from "./header.styles";
 
-const NavBar = ({items}) => {
+const NavBar = ({items, isOpen}) => {
     const [openSubmenu, setOpenSubmenu] = useState(null);
-
-    const handleSubmenuToggle = (index) => {
-        setOpenSubmenu(openSubmenu === index ? null : index);
+    console.log(openSubmenu);
+    const handleSubmenuToggle = () => {
+        setOpenSubmenu(!openSubmenu);
     };
 
-    const renderSubmenu = (submenu, index) => {
+    const renderSubmenu = (submenu) => {
         return (
-            <SubNavbarList items={submenu} key={submenu.index} onClick={() => handleSubmenuToggle(submenu.index) }>
+            <SubNavbarList items={submenu} key={submenu.index} onClick={() => handleSubmenuToggle(submenu.index) } className={openSubmenu ? "dropdown__open" : 'dropdown__close' } >
                 {submenu.map((item, subIndex) => {
                     return (
-                        <NavbarItem key={subIndex}>
+                        <SubNavbarItem key={subIndex}>
                             <NavbarLink href={item.url}>
                             {item.title}
-                            {item.submenu && openSubmenu === index && renderSubmenu(item.submenu, subIndex)}
+                            {item.submenu  && renderSubmenu(item.submenu)}
                             </NavbarLink>
-                        </NavbarItem>
+                            
+                            
+                        </SubNavbarItem>
                     );
                 }
                 )}
             </SubNavbarList>
+            
         );
     }
 
     return (
         <NavbarContainer items={items}>
-            <NavbarList items={items} key={items.index} onClick={() => handleSubmenuToggle(items.index)}>
+            <NavbarList items={items} key={items.index } onClick={() => handleSubmenuToggle(items.index)} className={ isOpen ? 'open' : 'close' }>
         {items.map((item, index) => {
             return (
                 <NavbarItem key={index}>
                     <NavbarLink href={item.url}>
                     {item.title}
-                    {item.submenu && renderSubmenu(item.submenu, index)}
+                    {item.submenu ? <ChevronDown role="img" className={openSubmenu? 'clicked' : ''}>
+                                
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10L12.0008 14.58L17 10" stroke="#979CC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </ChevronDown> : null}
+                    
+                    
                     </NavbarLink>
+                    {item.submenu && renderSubmenu(item.submenu, index)}
                 </NavbarItem>
             );
             
