@@ -16,15 +16,7 @@ export const HeaderContainer = styled.header`
 
 `;
 
-export const Logo = styled.a`
-    float: left;
-    position: relative;
-    .img {
-        width: 100px;
-        height: auto;
-    }
 
-`;
 
 export const Button = styled.button`
     @media (max-width: 992px) {
@@ -248,7 +240,7 @@ export const HamburgerMenu = styled.a`
         
       }
     
-    `;
+   `;
 export const ChevronDown = styled.span`
     width: 24px;
     height: 24px;

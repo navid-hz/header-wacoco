@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import propTypes from "prop-types";
 import NavBar from './navbar';
-import { HeaderContainer, Logo, Button, HamburgerMenu } from "./header.styles";
-import LogoLg from '../assets/Wacoco-Loggo-LG.svg';
+
+import { HeaderContainer,  HamburgerMenu } from "./header.styles";
+import Logo from "../logo/logo";
+
 //import BurgerIcon from '../assets/hamburger-close.svg'
 
 const Header = ({items}) => {
@@ -14,12 +16,14 @@ const Header = ({items}) => {
 
   return (
     <HeaderContainer items={items}>
-        <Logo href="#">
-            <img src={LogoLg} alt='WACOCO Logo' />
-        </Logo>
+        <Logo type="normal" className="logo-header" url={'#'} />
         <NavBar items={items} isOpen={isOpen} />
+       
+            
         
-        <Button>Contact us </Button>
+            
+        
+        
 
         <HamburgerMenu type="button" onClick={handleHamburgerMenu} isOpen={isOpen}>
         <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,7 @@
 import  Hamburger  from "./hamburger";
 
 export default {
-    title: "Hamburger",
+    title: "main_ui/atoms/Hamburger",
     component: Hamburger,
     argTypes: {
         color: { control: "color" },

@@ -5,7 +5,6 @@ export const HamburgerContainer = styled.div`
     width: 24px;
     height: 24px;
     position: relative;
-    margin: 50px auto;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;

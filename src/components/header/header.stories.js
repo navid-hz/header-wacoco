@@ -40,8 +40,35 @@ export default {
     }
 };
 
-export const Default = {
+export const desktop = {
     args: {
         items: items
-}
+    },
+    parameters: {
+        viewport: {
+            defaultViewport: 'desktop'
+        }
+    },
+};
+
+export const tablet = {
+    args: {
+        items: items
+    },
+    parameters: {
+        viewport: {
+            defaultViewport: 'tablet'
+        }
+    },
+};
+
+export const mobile = {
+    args: {
+        items: items
+    },
+    parameters: {
+        viewport: {
+            defaultViewport: 'mobile1'
+        }
+    },
 };

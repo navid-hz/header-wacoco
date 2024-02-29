@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from "../button/button";
 import { NavbarContainer, NavbarItem, NavbarList, SubNavbarList, NavbarLink, SubNavbarItem, ChevronDown } from "./header.styles";
 
 const NavBar = ({items, isOpen}) => {
@@ -51,7 +52,11 @@ const NavBar = ({items, isOpen}) => {
             );
             
         })}
+        <Button className='CUButton' label="Contact Us" size="small" backgroundColor="defult" />
         </NavbarList>
+        
+            
+    
         </NavbarContainer>
     );
     };
