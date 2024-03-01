@@ -1,18 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import {HamburgerContainer} from "./hamburger.styles";
 import propTypes from "prop-types";
 
 
 
-const Hamburger = ({color}) => {
-    console.log( color);
-    const [open, setOpen] = useState(false);
-    const handleHamburger = () => {
-        setOpen(!open);
-    }
+const Hamburger = ({color, isOpen , className, ...props}) => {
+    
+    
     return (
         <>
-            <HamburgerContainer className={open ? 'open' : null } type='button' onClick={handleHamburger} color={color}>
+            <HamburgerContainer 
+                className={ {className} && !isOpen ? null :'open' } 
+                type='button' 
+                onClick={props.onClick} 
+                color={color} 
+                {...props}
+                >
                 <span></span>
                 <span></span>
                 <span></span>
@@ -23,10 +26,15 @@ const Hamburger = ({color}) => {
 
 Hamburger.propTypes = {
     color: propTypes.string,
+    className: propTypes.string,
+    isOpen: propTypes.bool,
+    
 };
 
 Hamburger.defaultProps = {
-     color: "white"
+    color: "white",
+    className: 'burger',
+    
  };
 
 export default Hamburger;

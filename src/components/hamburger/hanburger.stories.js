@@ -5,6 +5,9 @@ export default {
     component: Hamburger,
     argTypes: {
         color: { control: "color" },
+        className: { control: "text" },
+        isOpen: { control: "boolean" },
+        
     },
     parameters: {
         layout: "centered",
@@ -18,5 +21,8 @@ export default {
 export const HamburgerMenu = {
     args: {
         color: "#fff",
+        className: "burger",
+        isOpen: false,	
+         
     }
 };

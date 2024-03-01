@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+
+
+    
+    
+
 export const HamburgerContainer = styled.div`
 
     width: 24px;
@@ -8,6 +13,12 @@ export const HamburgerContainer = styled.div`
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
+    display: none;
+
+    @media (max-width: 992px) {
+      display: block;
+      float: right;
+    }
 
     span {
         display: block;

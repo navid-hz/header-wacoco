@@ -198,49 +198,6 @@ export const SubNavbarItem = styled.li`
     }
 `;
 
-export const HamburgerMenu = styled.a`
-    width: 24px;
-    height: 24px;
-    display: none;
-    position: relative;
-    cursor: pointer;
-    @media (max-width: 992px) {
-        display: block;
-        float: right;
-    }
-    }
-    
-    
-     .middle, .bottom, .top {
-        position: absolute;
-        transition: all 0.5s ease-in-out;
-       
-        
-    }
-
-    .active.bottom{
-        transform-origin:  center;
-        width: 0;
-      }
-      
-      .active.top{
-        transform: rotate(45deg);
-        transform-origin: top left;
-        width: 24px;
-        
-        
-      }
-      
-      .active.middle{
-        transform:rotate(-45deg);
-        transform-origin: bottom left;
-        width: 24px;
-        
-        
-        
-      }
-    
-   `;
 export const ChevronDown = styled.span`
     width: 24px;
     height: 24px;
