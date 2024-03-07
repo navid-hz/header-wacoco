@@ -52,7 +52,7 @@ const NavBar = ({items, isOpen}) => {
             );
             
         })}
-        <Button className='CUButton' label="Contact Us" size="small" backgroundColor="defult" />
+        <Button className='CUButton' label="Contact Us" size="small" backgroundColor="white" />
         </NavbarList>
         
             
